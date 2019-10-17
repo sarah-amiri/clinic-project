@@ -1,0 +1,33 @@
+﻿/* You can add global styles to this file, and also import other style files */
+:root {
+  --doctors_color: #ee45a1;
+  --clinic_color: #32ac59;
+  --reserve_color: #6190aa;
+}
+/* font-Sahel */
+@font-face {
+  font-family: Sahel;
+  src: url('http://fonts.codearena.ir/rastikerdar/sahel/sahel.eot');
+  src: url('http://fonts.codearena.ir/rastikerdar/sahel/sahel.eot?#iefix') format('embedded-opentype'), url('http://fonts.codearena.ir/rastikerdar/sahel/sahel.woff') format('woff'), url('http://fonts.codearena.ir/rastikerdar/sahel/sahel.ttf') format('truetype');
+  font-weight: normal;
+}
+
+html, body {
+  direction: rtl;
+  font-family: Sahel;
+  text-align: right;
+}
+
+body {
+  font-size: .875rem;
+  background-color: #f7f7f7;
+}
+
+a {
+  color: #000;
+
+  &:hover {
+    color: #444;
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,25 @@
+﻿<div class="row">
+  <div class="col-sm-6 mx-auto">
+    <div class="card text-center">
+      <h4>برنامه این هفته ی دکتر {{doctor?.fname + ' ' + doctor?.lname}} در درمانگاه</h4>
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th>روز هفته</th>
+            <th>صبح</th>
+            <th>عصر</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="attendance">
+          <tr *ngFor="let day of days; let i = index;">
+            <td><b>{{day}}</b></td>
+            <td *ngIf="attendance['morning'].includes(i)">{{i}}</td>
+            <td *ngIf="!attendance['morning'].includes(i)">not morning</td>
+            <td *ngIf="attendance['afternoon'].includes(i)">{{i}}</td>
+            <td *ngIf="!attendance['afternoon'].includes(i)">not afternoon</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

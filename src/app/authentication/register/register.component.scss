@@ -1,0 +1,49 @@
+﻿$register-color: #c21e49;
+.card-header {
+  background-color: inherit;
+}
+
+.card-footer {
+  background-color: lighten($register-color, 50%);
+
+  a {
+    color: $register-color;
+    border-bottom: 1px dashed $register-color;
+  }
+}
+.form-group {
+  position: relative;
+
+  .form-control {
+    padding: .5rem 2.5rem .5rem .5rem;
+    height: auto;
+  }
+
+  .fa {
+    position: absolute;
+    top: .5rem;
+    right: .75rem;
+    font-size: 22px;
+    color: #888;
+  }
+
+  .input-feedback {
+    color: red;
+    padding: .5rem;
+    text-align: right;
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.btn-register {
+  background-color: $register-color;
+  border-color: $register-color;
+  color: #fff;
+
+  &:hover, &.disabled {
+    background-color: lighten($register-color, 10%);
+    border-color: lighten($register-color, 10%);
+  }
+}

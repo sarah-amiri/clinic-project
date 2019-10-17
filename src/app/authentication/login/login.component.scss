@@ -1,0 +1,43 @@
+﻿$login-color: #43551c;
+.card-header {
+  background-color: inherit;
+}
+.card-footer {
+  background-color: lighten($login-color, 65%);
+
+  a {
+    color: $login-color;
+    border-bottom: 1px dashed $login-color;
+  }
+}
+.form-group {
+  position: relative;
+
+  .form-control {
+    padding: .5rem 2.5rem .5rem .5rem;
+    height: auto;
+  }
+  .fa {
+    position: absolute;
+    top: .5rem;
+    right: .75rem;
+    font-size: 22px;
+    color: #888;
+  }
+  .input-feedback {
+    color: red;
+    padding: .5rem;
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+.btn-login {
+  background-color: $login-color;
+  border-color: $login-color;
+  color:#fff;
+  &:hover, &.disabled {
+    background-color: lighten($login-color, 10%);
+    border-color: lighten($login-color, 10%);
+  }
+}

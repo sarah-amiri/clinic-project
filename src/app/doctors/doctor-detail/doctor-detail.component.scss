@@ -1,0 +1,10 @@
+﻿$doctors_color: #ee45a1;
+
+.btn-doctor {
+  background-color: $doctors_color;
+  border-color: $doctors_color;
+  color: #fff;
+  &:hover {
+    background-color: darken($doctors_color, 10%);
+  }
+}

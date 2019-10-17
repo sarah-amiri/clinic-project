@@ -1,0 +1,8 @@
+﻿$clinic_color: #32ac59;
+
+.list-group-item {
+  &:hover {
+    background-color: lighten($clinic_color, 30%);
+    cursor: pointer;
+  }
+}

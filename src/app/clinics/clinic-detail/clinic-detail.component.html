@@ -1,0 +1,13 @@
+﻿<div *ngIf="clinic">
+  <h4>{{clinic.name}}</h4>
+  <p><b>شماره تماس: </b>{{clinic.phone}}</p>
+  <hr />
+  <div *ngIf="doctors">
+    <h6>پزشکان درمانگاه</h6>
+    <ul class="clinic-doctors">
+      <li *ngFor="let dc of doctors" [routerLink]="['/doctors', dc.id]">
+        {{dc.fname + ' ' + dc.lname}}
+      </li>
+    </ul>
+  </div>
+</div>

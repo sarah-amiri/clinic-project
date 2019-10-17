@@ -1,0 +1,80 @@
+﻿<div class="alert alert-success text-center mt-3" *ngIf="success">ثبت نام شما با موفقیت انجام شد</div>
+<div class="alert alert-danger text-center" *ngIf="fail">
+  شما در سایت عضو هستید. لطفا برای ورود، از صفحه
+  <a routerLink="/user/login" class="alert-link">ورود به سایت</a>
+  استفاده کنید.
+</div>
+<div class="card text-center">
+  <div class="card-header"><h4>عضویت در سایت</h4></div>
+  <div class="card-body">
+    <form [formGroup]="register" (ngSubmit)="signup()">
+      <div class="form-group">
+        <i class="fa fa-user"></i>
+        <input type="text"
+               class="form-control"
+               formControlName="fname"
+               placeholder="نام" />
+        <div class="input-feedback"
+             *ngIf="register.get('fname').invalid && (register.get('fname').touched || register.get('fname').dirty)">
+          <p *ngIf="register.get('fname').errors.required">ورود نام ضروری است.</p>
+          <p *ngIf="register.get('fname').errors.pattern">لطفا نام خود را به درستی وارد نمایید.</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <i class="fa fa-user-circle"></i>
+        <input type="text"
+               class="form-control"
+               formControlName="lname"
+               placeholder="نام خانوادگی" />
+        <div class="input-feedback"
+             *ngIf="register.get('lname').invalid && (register.get('lname').touched || register.get('lname').dirty)">
+          <p *ngIf="register.get('lname').errors.required">ورود نام ضروری است.</p>
+          <p *ngIf="register.get('lname').errors.pattern">لطفا نام خود را به درستی وارد نمایید.</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <i class="fa fa-id-card"></i>
+        <input type="text"
+               class="form-control"
+               formControlName="id"
+               placeholder="کد ملی" />
+        <div class="input-feedback"
+             *ngIf="register.get('id').invalid && (register.get('id').touched || register.get('id').dirty)">
+          <p *ngIf="register.get('id').errors.required">کد ملی خود را وارد نمایید.</p>
+          <p *ngIf="!register.get('id').errors.pattern && (register.get('id').errors.minlength || register.get('id').errors.maxlength)">کد ملی باید ده رقمی باشد.</p>
+          <p *ngIf="register.get('id').errors.pattern">کد ملی خود را به درستی وارد نمایید.</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <i class="fa fa-key"></i>
+        <input type="password"
+               class="form-control"
+               formControlName="password"
+               placeholder="رمز عبور انتخابی" />
+        <div class="input-feedback"
+             *ngIf="register.get('password').invalid && (register.get('password').touched || register.get('password').dirty)">
+          <p *ngIf="register.get('password').errors.required">رمز عبور انتخابی خود را وارد نمایید.</p>
+          <p *ngIf="register.get('password').errors.minlength || register.get('password').errors.maxlength">رمز عبور باید بین 6 تا 16 کاراکتر باشد.</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <select class="form-control"
+                formControlName="gender">
+          <option value="">جنسیت</option>
+          <option *ngFor="let gender of genders" [value]="gender">{{gender}}</option>
+        </select>
+        <div class="input-feedback"
+             *ngIf="register.get('gender').invalid && (register.get('gender').touched || register.get('gender').dirty)">
+          <p>گزینه صحیح را انتخاب نمایید.</p>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-register w-100" [disabled]="register.invalid">عضویت</button>
+    </form>
+  </div>
+  <div class="card-footer">
+    <p>
+      در سایت عضو هستید؟
+      <a [routerLink]="['/user', 'login']">ورود به سایت</a>
+    </p>
+  </div>
+</div>
